@@ -1,0 +1,63 @@
+.search-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin: 38px auto;
+  max-width: 1200px;
+  gap: 20px;
+  &__form {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    height: 35px;
+    width: 300px;
+    margin: auto;
+    position: fixed;
+    top: 20px;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    &:focus-within {
+      background-color: rgba(
+        0,
+        0,
+        0
+      ); // Add the desired background color when focused
+    }
+
+    &__input {
+      border: none;
+      // border-bottom: 1px solid #ccc;
+      outline: none;
+      padding: 0 10px;
+      width: 100%;
+      color: #eeeeee;
+      background-color: transparent;
+    }
+
+    button {
+      border: none;
+      color: #ccc;
+      cursor: pointer;
+      background-color: transparent;
+      &:hover {
+        color: #ccc;
+      }
+    }
+  }
+
+  &__search-result {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    margin: 32px auto;
+
+    // > * {
+    //   width: calc(
+    //     100% / 3
+    //   ); // Adjust the width based on the number of children per line
+    // }
+  }
+}
