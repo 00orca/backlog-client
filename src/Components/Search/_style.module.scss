@@ -10,7 +10,8 @@
     background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
     height: 55px;
-    width: 300px;
+    width: 90vw;
+    max-width: 400px;
     margin: auto;
     position: fixed;
     top: 20px;
@@ -23,7 +24,8 @@
       background-color: rgba(
         0,
         0,
-        0
+        0,
+        0.75
       ); // Add the desired background color when focused
     }
 
@@ -31,7 +33,7 @@
       border: none;
       // border-bottom: 1px solid #ccc;
       outline: none;
-      padding: 0 10px;
+      padding: 0 30px;
       width: 100%;
       color: #eeeeee;
       background-color: transparent;
@@ -44,6 +46,7 @@
       cursor: pointer;
       font-size: 18px;
       background-color: transparent;
+      padding: 18px 20px;
       &:hover {
         color: #ccc;
       }

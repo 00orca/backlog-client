@@ -2,9 +2,8 @@
   display: flex;
   /* justify-content: center;
   align-items: center; */
-  text-align: center;
-  position: relative;
   /* center the div horizontally */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   margin: auto;
 }
 
