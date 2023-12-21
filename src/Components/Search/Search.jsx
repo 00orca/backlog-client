@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { searchGames } from "../../backlogApi";
 import styles from "./_style.module.scss";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
-import GameCard from "../Game/GameCard";
+import GameCard from "../Game/GameCard/GameCard";
 import mockGames from "../mockdata/MockGames";
 
 function Search() {
