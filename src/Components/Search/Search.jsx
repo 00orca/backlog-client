@@ -15,7 +15,7 @@ function Search() {
     // Call searchGame funcis it possibl ethat the probleme is form the my api that dosen't send the data to my phone which is contect through the localhostis it possibl ethat the probleme is form the my api that dosen't send the data to my phone which is contect through the localhosttion from backlogApi.js
     const results = await searchGames(searchTerm);
     // const results = mockGames;
-    // console.log("Search results:", results);
+    console.log("Search results:", results);
 
     setSearchResults(results);
   };

@@ -26,8 +26,10 @@ export const getGame = async (gameId) => {
     }
 
     const data = await response.json();
-    return data[0]; // Access the first element of the array
+
+    return data;
   } catch (error) {
     console.error("Error:", error);
+    // console.log("Error:", error);
   }
 };
