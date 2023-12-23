@@ -6,8 +6,8 @@ function App() {
   return (
     <div className="App">
       <div className="content">
-        <Search />
-        <Game game_id="1128" />
+        {/* <Search /> */}
+        <Game game_id="172427" />
       </div>
     </div>
   );

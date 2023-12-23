@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { getGame } from "../../backlogApi";
 import style from "./_style.module.scss";
 import { head } from "lodash";
+import LinesEllipsis from "react-lines-ellipsis";
 
 const Game = (props) => {
   const { game_id } = props;
@@ -30,16 +31,14 @@ const Game = (props) => {
     (involved_company) => involved_company.publisher
   );
 
+  const randomScreenshot = Math.floor(Math.random() * game.screenshots?.length);
+
   return (
     <div className={style["game-container"]}>
       <div className={style["game-container__parallax"]}>
         {game.screenshots?.length > 0 && (
           <img
-            src={`https://images.igdb.com/igdb/image/upload/t_screenshot_huge/${
-              game.screenshots[
-                Math.floor(Math.random() * game.screenshots.length)
-              ].image_id
-            }.jpg`}
+            src={`https://images.igdb.com/igdb/image/upload/t_screenshot_huge/${game.screenshots[randomScreenshot].image_id}.jpg`}
             alt={game.name}
           />
         )}
@@ -57,6 +56,9 @@ const Game = (props) => {
         <div className={style["game-container__header__body"]}>
           <div className={style["game-container__header__body__title"]}>
             {game.name}
+          </div>
+          <div className={style["game-container__header__body__date"]}>
+            {game.first_release_date}
           </div>
           <div className={style["game-container__header__body__companies"]}>
             Publié par
@@ -86,18 +88,26 @@ const Game = (props) => {
               </div>
             ))}
           </div>
-          <div className={style["game-container__header__consoles"]}>
+          <div className={style["game-container__header__body__consoles"]}>
             {game.platforms?.map((platform) => (
               <div
-                className={style["game-container__header__consoles__item"]}
+                className={
+                  style["game-container__header__body__consoles__item"]
+                }
                 key={platform.id}
               >
                 {platform.name}
               </div>
             ))}
           </div>
-          <div className={style["game-container__header__summary"]}>
-            {game.summary}
+          <div className={style["game-container__header__body__summary"]}>
+            <LinesEllipsis
+              text={game.summary}
+              maxLine="10"
+              ellipsis="..."
+              trimRight
+              basedOn="letters"
+            />
           </div>
         </div>
       </div>

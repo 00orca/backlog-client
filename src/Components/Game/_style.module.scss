@@ -1,15 +1,30 @@
 .game-container {
   color: #eeeeee;
+  width: inherit;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
   &__parallax {
     display: flex;
-    width: 100%;
-    position: relative;
+    width: 100vw; // Add this line to make it take the whole width of the screen
+    position: absolute;
+    left: 0;
+    top: 0;
     z-index: -1;
+    @media screen and (max-width: 768px) {
+      width: 110vw;
+    }
     img {
       width: 100%;
       height: 400px;
       object-fit: cover;
-      filter: blur(5px);
+      filter: blur(10px) brightness(0.5);
     }
   }
 
@@ -22,7 +37,10 @@
     padding: 20px;
     position: relative;
     z-index: 1;
-    margin-top: -100px;
+    // margin-top: 125px;
+    margin: auto;
+    flex-wrap: wrap;
+    width: 100%;
     &__cover {
       max-height: 400px;
       object-fit: cover;
@@ -36,9 +54,13 @@
       gap: 10px;
 
       &__title {
-        font-size: 24px;
+        font-size: 50px;
         font-weight: 700;
-        margin: 10px 0;
+      }
+
+      &__date {
+        font-size: 30px;
+        font-weight: 600;
       }
 
       &__companies {
@@ -52,6 +74,26 @@
           padding: 5px 10px;
           border-radius: 30px;
           font-size: 14px;
+        }
+      }
+      &__consoles {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        &__item {
+          background-color: rgba(#111111, 0.5);
+          color: #eeeeee;
+          padding: 5px 10px;
+          border-radius: 30px;
+          font-size: 14px;
+        }
+      }
+      &__summary {
+        font-size: 18px;
+        line-height: 1.5;
+        width: 70%;
+        @media screen and (max-width: 768px) {
+          width: 100%;
         }
       }
     }
