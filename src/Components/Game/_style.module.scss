@@ -31,7 +31,7 @@
   &__header {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 30px;
     align-items: center;
     justify-content: center;
     padding: 20px;
@@ -39,7 +39,6 @@
     z-index: 1;
     // margin-top: 125px;
     margin: auto;
-    flex-wrap: wrap;
     width: 100%;
     &__cover {
       max-height: 400px;
@@ -56,6 +55,8 @@
       &__title {
         font-size: 50px;
         font-weight: 700;
+        display: flex;
+        flex-wrap: wrap;
       }
 
       &__date {

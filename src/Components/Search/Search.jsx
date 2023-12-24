@@ -4,6 +4,8 @@ import styles from "./_style.module.scss";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import GameCard from "../Game/GameCard/GameCard";
 import mockGames from "../mockdata/MockGames";
+import { Link } from "react-router-dom";
+import { unset } from "lodash";
 
 function Search() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -48,7 +50,13 @@ function Search() {
             className={styles["search-container__search-result__item"]}
             key={result.id}
           >
-            <GameCard game={result} />
+            <Link
+              to={`/game/${result.slug}`}
+              state={{ id: result.id }}
+              style={{ all: unset }}
+            >
+              <GameCard game={result} />
+            </Link>
           </div>
         ))}
       </div>

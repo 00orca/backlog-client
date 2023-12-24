@@ -1,15 +1,20 @@
+import GamePage from "./pages/GamePage";
 import "./App.css";
-import Game from "./Components/Game/Game";
-import Search from "./Components/Search/Search";
+import Search from "./Components/Search/Search.1";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <div className="content">
-        {/* <Search /> */}
-        <Game game_id="172427" />
+    <Router>
+      <div className="App">
+        <div className="content">
+          <Routes>
+            <Route path="/search" element={<Search />} />
+            <Route path="/game/:slug" element={<GamePage />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+    </Router>
   );
 }
 
